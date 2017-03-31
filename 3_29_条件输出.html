@@ -7,12 +7,12 @@
 </head>
 <body>
     <div id="app">
-        <div v-if="Math.random() > 0.5">
+        <template v-if="Math.random() > 0.5">
             随机数大于0.5
-        </div>
-        <div v-else>
+        </template>
+        <template v-else>
             随机数不大于0.5
-        </div>
+        </template>
     </div>
     
     <script>
