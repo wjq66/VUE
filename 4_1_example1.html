@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <template v-for="site in sites">
+                <li>{{site.name}}</li>
+                <li>--------------</li>
+            </template>
+        </ul>
+    </div>
+    <hr>
+    
+    <!--查看一下几组li的区别-->
+    <div id="app2">
+        <ul>
+           <!--非数组中key表示键名-->
+            <li v-for="(value,key) in object">
+                {{key}}:{{value}}
+            </li>
+        </ul>
+        
+        <hr>
+        <ul>
+           <!--数组中key表示序列号-->
+            <li v-for="(value,key) in objects">
+                {{key}}:{{value.name}}
+            </li>
+        </ul>
+    </div>
+    
+    
+    
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                sites:[
+                    {name:'Runoob'},
+                    {name:'Google'},
+                    {name:'Taobao'}
+                ]
+            }
+        })
+        
+        new Vue({
+            el:'#app2',
+            data:{
+                object:{
+                     name: '菜鸟教程',
+                    url: 'http://www.runoob.com',
+                    slogan: '学的不仅是技术，更是梦想！'
+                },
+                objects:[{
+                    name: '菜鸟教程',
+                },{
+                    name: '菜鸟教程q',
+                },{
+                    name: '菜鸟教程a',
+                }]
+            }
+        })
+    </script>
+</body>
+</html>
